@@ -1,3 +1,49 @@
 /ToDoApi/bin/
 /ToDoApi/obj/
+/ToDoApi/Properties/launchSettings.json
+/ToDoApi/.idea/
 # Visual Studio files
+
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/ClientApp/dist
+/ClientApp/tmp
+/ClientApp/out-tsc
+/ClientApp/bazel-out
+
+# Node
+/ClientApp/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+/ClientApp/.idea/
+/ClientApp/.project
+/ClientApp/.classpath
+/ClientApp/.c9/
+*.launch
+/ClientApp/.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+/ClientApp/.vscode/*
+/ClientApp/.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+/ClientApp/.history/*
+
+# Miscellaneous
+/ClientApp/.angular/cache
+/.sass-cache/
+/ClientApp/connect.lock
+/ClientApp/coverage
+/ClientApp/libpeerconnection.log
+testem.log
+/ClientApp/typings
+
+# System files
+.DS_Store
+Thumbs.db

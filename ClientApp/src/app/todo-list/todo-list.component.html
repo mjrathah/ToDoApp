@@ -1,0 +1,19 @@
+<div class="todo-list">
+  <h2>To Do List</h2>
+  
+  <div *ngFor="let item of toDo$ | async" class="todo-item">
+    <input type="checkbox" 
+           [checked]="item.isCompleted" 
+           (change)="toggleComplete(item)">
+    
+    <div class="todo-content">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <small>Created: {{ item.createdDate }}</small>
+    </div>
+    
+    <button (click)="deleteToDo(item.id)">Delete</button>
+  </div>
+  
+  <app-add-todo></app-add-todo>
+</div>

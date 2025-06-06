@@ -1,0 +1,42 @@
+<!-- ClientApp/src/app/components/add-task/add-task.component.html -->
+<div class="add-todo-container">
+  <h2>Add New Task</h2>
+  <form [formGroup]="toDoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title*</label>
+      <input 
+        type="text" 
+        id="title" 
+        formControlName="title" 
+        placeholder="Enter task title"
+        [class.is-invalid]="toDoForm.get('title')?.invalid && toDoForm.get('title')?.touched">
+      <div *ngIf="toDoForm.get('title')?.invalid && toDoForm.get('title')?.touched" class="error-message">
+        Title is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea 
+        id="description" 
+        formControlName="description" 
+        placeholder="Enter task description"
+        rows="3"></textarea>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <input 
+        type="checkbox" 
+        id="isCompleted" 
+        formControlName="isCompleted">
+      <label for="isCompleted">Completed</label>
+    </div>
+
+    <button 
+      type="submit" 
+      [disabled]="toDoForm.invalid" 
+      class="submit-button">
+      Add Task
+    </button>
+  </form>
+</div>
