@@ -15,5 +15,5 @@ export const appConfig: ApplicationConfig = {
         registrationStrategy: 'registerWhenStable:30000'
     }), 
     provideAnimationsAsync(),
-    importProvidersFrom(HttpClientModule)]
+    importProvidersFrom(HttpClientModule), provideAnimationsAsync()]
 };

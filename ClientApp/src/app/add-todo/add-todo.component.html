@@ -1,42 +1,42 @@
-<!-- ClientApp/src/app/components/add-task/add-task.component.html -->
-<div class="add-todo-container">
-  <h2>Add New Task</h2>
+<div class="add-todo-container mat-elevation-z2" style="padding: 24px; border-radius: 8px;">
+  <h2 mat-typography class="mat-headline">Add New Task</h2>
   <form [formGroup]="toDoForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="title">Title*</label>
-      <input 
-        type="text" 
-        id="title" 
-        formControlName="title" 
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Title*</mat-label>
+      <input
+        matInput
+        type="text"
+        id="title"
+        formControlName="title"
         placeholder="Enter task title"
-        [class.is-invalid]="toDoForm.get('title')?.invalid && toDoForm.get('title')?.touched">
-      <div *ngIf="toDoForm.get('title')?.invalid && toDoForm.get('title')?.touched" class="error-message">
+        required>
+      <mat-error *ngIf="toDoForm.get('title')?.invalid && toDoForm.get('title')?.touched">
         Title is required
-      </div>
-    </div>
+      </mat-error>
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="description">Description</label>
-      <textarea 
-        id="description" 
-        formControlName="description" 
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        id="description"
+        formControlName="description"
         placeholder="Enter task description"
         rows="3"></textarea>
-    </div>
+    </mat-form-field>
 
-    <div class="form-group checkbox-group">
-      <input 
-        type="checkbox" 
-        id="isCompleted" 
-        formControlName="isCompleted">
-      <label for="isCompleted">Completed</label>
-    </div>
+    <mat-checkbox formControlName="isCompleted" color="primary" style="margin-bottom: 16px;">
+      Completed
+    </mat-checkbox>
 
-    <button 
-      type="submit" 
-      [disabled]="toDoForm.invalid" 
-      class="submit-button">
-      Add Task
-    </button>
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="toDoForm.invalid">
+        Add Task
+      </button>
+    </div>
   </form>
 </div>

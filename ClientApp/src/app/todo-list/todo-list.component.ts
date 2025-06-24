@@ -3,11 +3,27 @@ import { ToDoItem, ToDoService } from '../services/todo.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { AddToDoComponent } from '../add-todo/add-todo.component';
+import { MatListModule, MatList, MatListItem } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [AsyncPipe, NgFor, AddToDoComponent],
+  imports: [AsyncPipe, 
+    NgFor,
+    NgClass, 
+    AddToDoComponent,
+    MatListModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatIconModule,
+    MatDividerModule,
+    MatListItem,
+    MatList],
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
